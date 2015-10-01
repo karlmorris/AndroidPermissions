@@ -15,7 +15,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         // Check if we currently have permission to use the resource
-        if (PackageManager.PERMISSION_DENIED == checkSelfPermission(Manifest.permission.SEND_SMS)) {
+        if (PackageManager.PERMISSION_DENIED != checkSelfPermission(Manifest.permission.SEND_SMS)) {
             doSMSAction();
         } else {
             if (shouldShowRequestPermissionRationale(Manifest.permission.SEND_SMS)){
